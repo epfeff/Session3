@@ -1,0 +1,7 @@
+CMakeFiles/
+*.cmake
+CMakeCache.txt
+main
+.out
+*PS3*
+compiling_error.txt

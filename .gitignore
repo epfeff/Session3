@@ -5,4 +5,9 @@ main
 .out
 *PS3*
 compiling_error.txt
+<<<<<<< HEAD
 input.txt
+=======
+*.png
+result.txt
+>>>>>>> 6aaa3c7a6f4034a0135cff6873a199ab704c980d

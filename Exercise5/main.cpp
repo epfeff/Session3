@@ -17,10 +17,14 @@ int main(void)
 
   std::cout << r << endl;
 
-  Z2 s = 2*3;
+  signed int a = 0;
+  signed int b = 0;
+
+  a = -2 * p;
+  b = m * 2;
 
   std::cout << 2*p << endl;
-
+  std::cout << b << endl;
 
   int n = 0;
   std::cin >> n;
@@ -49,15 +53,15 @@ template<class T> T operator* (T a, Z2 b)
 {
   if (a > 0){
     if (b > 0) {
-      return Plus;
+      return +1;
     } else {
-      return Minus;
+      return -1;
     }
   } else {
     if (b > 0) {
-      return Minus;
+      return +1;
     } else {
-      return Plus;
+      return -1;
     }
   }
 }
@@ -66,15 +70,15 @@ template<class T> T operator* (Z2 a, T b)
 {
   if (b > 0){
     if (a == Plus) {
-      return Plus;
+      return +1;
     } else {
-      return Minus;
+      return -1;
     }
   } else {
     if (a == Plus) {
-      return Minus;
+      return -1;
     } else {
-      return Plus;
+      return +1;
     }
   }
 }

@@ -39,6 +39,7 @@ int main(void)
       system("gnuplot plot_settings");
       system("rm plot_settings");
   #endif
+  int n = 0;
 
 }
 // integrand 1

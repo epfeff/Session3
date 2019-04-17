@@ -36,7 +36,6 @@ int main(void)
   area = area * h/6;
 
 cout << "Area :" << area << endl;
-
 }
 
 // integrand

@@ -2,24 +2,79 @@
 
 using namespace std;
 
+// declaration
+enum Z2 { Plus, Minus };
+Z2 operator * (Z2 a, Z2 b);
+std::ostream& operator<<(std::ostream& os, Z2 a);
+template<class T> T operator* (T a, Z2 b);
+template<class T> T operator* (Z2 a, T b);
+
 int main(void)
 {
-  enum Z2 { Plus, Minus };
-
-  Z2 operator* (Z2 a, Z2 b);
 
   Z2 p = Plus, m = Minus;
   Z2 r = p*m;
+
+  std::cout << r << endl;
+
+  Z2 s = 2*3;
+
+  std::cout << 2*p << endl;
+
+
+  int n = 0;
+  std::cin >> n;
 }
 
-// Output a reversed normalized sequence
-void printReverse(double array[], int size) {
-  std::cout << "Reverse normalized sequence: [";
-  for (int i = size-1; i>=0; i--) {
-    std::cout << array[i];
-    if (i != 0) {
-      std::cout << ", " ;
+Z2 operator * (Z2 a, Z2 b)
+{
+  if (a == b){
+    return Plus;
+  } else {
+    return Minus;
+  }
+}
+
+std::ostream& operator<<(std::ostream& os, Z2 a)
+{
+    if (a == Plus){
+      os << "Plus";
+    } else {
+      os << "Minus";
+    }
+    return os;
+}
+
+template<class T> T operator* (T a, Z2 b)
+{
+  if (a > 0){
+    if (b > 0) {
+      return Plus;
+    } else {
+      return Minus;
+    }
+  } else {
+    if (b > 0) {
+      return Minus;
+    } else {
+      return Plus;
     }
   }
-  std::cout << "]" << endl;
+}
+
+template<class T> T operator* (Z2 a, T b)
+{
+  if (b > 0){
+    if (a == Plus) {
+      return Plus;
+    } else {
+      return Minus;
+    }
+  } else {
+    if (a == Plus) {
+      return Minus;
+    } else {
+      return Plus;
+    }
+  }
 }

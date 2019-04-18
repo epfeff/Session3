@@ -3,15 +3,19 @@
 
 #include <utility> // for std::swap
 #include <cassert>
+#include "iterator.hpp"
 
 template <class T>
 class Array {
-  public:
+
+public:
     using size_type = std::size_t ;
     using value_type = T;
     using reference = T&;
     using const_reference = const T&;
-    using iterator = T*;
+
+    // define iterator typedef (using)
+    using iterator = FwdIterator<T>;
 
     Array(); // empty array
     Array(const size_type &, const value_type & = value_type() ); // Array of given size
@@ -32,7 +36,7 @@ class Array {
     iterator begin();
     iterator end();
 
-  private:
+private:
     size_type sz_; // size
     value_type* v_;   // pointer to the actual array
 };
@@ -48,6 +52,7 @@ Array<T>::Array( const size_type & s
                                             , v_(new value_type[sz_]) {
     for ( size_type i = 0; i < sz_; ++i )
         v_[i] = initial;
+
 }
 
 template <class T>
@@ -96,24 +101,31 @@ void Array<T>::resize(const size_type & new_size) {
 
 template <class T>
 typename Array<T>::reference Array<T>::operator[](const size_type & index) {
+    // only assert and not error here, the version with runtime error is called
+    // .at(index) for most containers (errors are expensive)
     assert (index>=0 and index < size());
     return v_[index];
 }
 
 template <class T>
 typename Array<T>::const_reference Array<T>::operator[](const size_type & index) const {
+    // not nice that we have twice the same implementation, can be solved
+    // but not in this lecture
     assert (index>=0 and index < size());
     return v_[index];
 }
 
-// define begin and end
+// Begin and End method definitions.
+
+// Begin() method - returns an iterator pointing on the beginning of the container
 template <class T>
 typename Array<T>::iterator Array<T>::begin() {
-    return v_;
+  return iterator(v_ , v_ , v_ + sz_);
 }
+// End() method - retusn an iterator pointing on the end of the container
 template <class T>
 typename Array<T>::iterator Array<T>::end() {
-    return v_ + sz_;
+  return iterator(v_ + sz_ , v_ , v_ + sz_);
 }
 
 #endif // ARRAY_HPP

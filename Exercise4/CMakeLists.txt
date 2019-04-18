@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.6)
-project (PS3-Exercise3)
+project (PS3-Exercise4)
 
 configure_file (
   "${PROJECT_SOURCE_DIR}/libintegrate.h.in"

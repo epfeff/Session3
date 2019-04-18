@@ -1,3 +1,9 @@
+/**
+ Programming SS 2019 - Problem Set 3
+ Exercise 3
+ Author: Elena Pfefferlé
+ Contact: eapfefferle@gmail.com
+*/
 #include <iostream>
 #include <cmath>
 // user defined library

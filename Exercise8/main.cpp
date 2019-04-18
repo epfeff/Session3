@@ -16,22 +16,23 @@ int main()
 
 	// Load numbers into array
 	Array<int>::iterator iter = array.begin();
+	// see why auto is usefull? auto iter = array.begin();
 
 	for( size_t i = 0 ; i < N ; ++i )
 		*iter++ = nums[ i ]; // InputIterator use
 
 	// print the copied array the normal way
-	//for (iter = array.begin(); iter != array.end(); ++iter)
-	//	std::cout << *iter;
-	//std::cout << std::endl;
+	for (iter = array.begin(); iter != array.end(); ++iter)
+		std::cout << *iter;
+	std::cout << std::endl;
 
 	// uncomment these lines if you have bidirectional support
 	// Print numbers in reverse order
-	//iter = array.end();
-	//do {
-	//   std::cout << *(--iter);
-	//} while( iter != array.begin() );
-	//std::cout << std::endl;
+	iter = array.end();
+	do {
+	  std::cout << *(--iter);
+	} while( iter != array.begin() );
+	std::cout << std::endl;
 
 	return 0;
 }

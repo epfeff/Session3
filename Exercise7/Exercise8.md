@@ -1,4 +1,4 @@
-# Exercise 8  Code Output
+# Exercise 7 
 
 ### General:
 
@@ -69,7 +69,7 @@ Here we are actually calling `a.print_state()`.
 - **guessed output** : "green"
 
 #### Line 14 - delete b_ptr;
-Here we are calling `delete` on `b_ptr`, this mean that we call the class deconstructor `~Trafficight()`. However since the `b_ptr` is an `object pointer` pointing on `class Trafficlight` it calls the deconstructor of all instances of that class.
+Here we are calling `delete` on `b_ptr`, this mean that we call the class deconstructor `~Trafficight()`. However since `b_ptr` is an `object pointer` pointing on `class Trafficlight` it calls the deconstructor of all instances of that class.
 - **guessed output** : "Deconstructing 1 Deconstructing 3 Deconstructing 4 Deconstructing 2 Deconstructing 0"
 
 ## Guessed output

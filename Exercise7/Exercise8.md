@@ -1,4 +1,5 @@
-# Exercise 7 
+# Exercise 7
+Author: Elena Pfefferlé
 
 ### General:
 

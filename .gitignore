@@ -7,3 +7,6 @@ main
 compiling_error.txt
 *.png
 result.txt
+Makefile
+*.out
+*.a

@@ -1,15 +1,10 @@
 cmake_minimum_required (VERSION 2.6)
+
 project (PS3-Exercise3)
 
-configure_file (
-  "${PROJECT_SOURCE_DIR}/libintegrate.h.in"
-  "${PROJECT_BINARY_DIR}/libintegrate.h"
-  )
+# adds a subdirectory, cmake will search for CMAkeLists.txt in there
+add_subdirectory(simpson)
 
-include_directories("${PROJECT_BINARY_DIR}")
-
+# compile and link main function
 add_executable(PS3-Exercise3 main.cpp)
-
-
-# add_executable(main main.cpp)
-# target_link_libraries(main ${CMAKE_SOURCE_DIR}/libbingitup.a)
+target_link_libraries(PS3-Exercise3 libintegrate)

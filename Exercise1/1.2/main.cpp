@@ -5,12 +5,12 @@
  Contact: eapfefferle@gmail.com
 */
 #include <iostream>
-#include <vector>
-#include <numeric>
-#include <algorithm>
+#include <vector>         // to use vectors
+#include <numeric>        // to use  accumulate
+#include <algorithm>      // to use for_each
 
 using namespace std;
-// declarations
+
 
 // print an array from end to beginning
 void printReverse(vector<double> array, int size);
@@ -26,11 +26,12 @@ int main(void)
     // dynamic array to store the sequence
     vector<double> sequence;
     // Asks user for the quantity of values (sequence size)
+    std::cout << "! Non numerical values will crash the program !" << endl;
     std::cout << "Number of values: ";
     std::cin >>n;
     // Sets array size to n
     sequence.resize(n);
-    // Asks user to input the values stored in the sequence
+    // Asks user to input the values to store into the sequence
     for (int i = 0; i<n; i++) {
       std::cout << "Value " << i << ": ";
       std::cin >> p;
@@ -42,6 +43,7 @@ int main(void)
     std::for_each(sequence.begin(), sequence.end(), [sum](double& n){n=n/sum;});
     // output reversed nomalized sequence
     printReverse(sequence, n);
+    return(0);
 }
 
 // Output a reversed normalized sequence

@@ -1,14 +1,11 @@
 /**
- libintegrate.h
+ simpson.cpp
 
  Author: Elena Pfefferlé
  Contact: eapfefferle@gmail.com
 */
 #include <assert.h>
-
-// function declaration
-double simpson(double (*f)(double), double a, double b, double n);
-
+#include "simpson.hpp"
 /**
  Computes the area between intervals 'a' and 'b' of a function 'f' using 'n' bins.
  - a must be different than b.
@@ -21,14 +18,11 @@ double simpson(double (*f)(double), double a, double b, double n);
  - a is a double, it represents the lowest point of the interval.
  - b is a double, it represents the highest point of the interval.
  - n is a double, it represents the quantity of bins to analyze
+
+ Returns the computed area.
 */
 double simpson(double (*f)(double), double a, double b, double n)
 {
-  // precondition: a != b
-  // precondition: b > a
-  // precondition: n < 0
-  // precondition: f returns one double value
-  // postcondidition: returns the area computed
   assert(a != b && "A must be different from B !");
   assert(a < b && "B must be greater than A !");
   assert(n > 0 && "N must be greater than 0 !");

@@ -5,34 +5,35 @@
  Contact: eapfefferle@gmail.com
 */
 #include <iostream>
-#include <cmath>
+#include <cmath>            // to use sin
 #include <fstream>
 // user defined library
-#include "libintegrate.h"
+#include "simpson/simpson.hpp"
 
 # define PI 3.14159265358979323846
 
 using namespace std;
-// declarations
 
 // integrands
 double f(double x);
 double g(double x);
-// simpson function
-double simpson(double (*f)(double), double a, double b, double n);
 
 int main(void)
 {
-  // initiate a file output
-  std::ofstream ofs ("result.txt", std::ofstream::out);
+  // set output precision to 15 digits
+  std::cout.precision(15);
+  // redirect COUT to preserve precision
+  std::ofstream out("result.txt");
+  std::streambuf *coutbuf = std::cout.rdbuf(); //save old buf
+  std::cout.rdbuf(out.rdbuf());
   // performs simpson integration for i = 1 to 70
   for (int i = 1; i<=70; i++)
   {
     //writes results in the file
-    ofs << i << "    " << simpson(f, 0, PI, i) << endl;
+    std::cout << i << "    " <<  simpson(f, 0, PI, i) << endl;
   }
-  //closes the file
-  ofs.close();
+  // reset standard output
+  std::cout.rdbuf(coutbuf);
   // creates a files containing plot settings
   std::ofstream stg ("plot_settings", std::ofstream::out);
   stg << "set terminal png; set output 'result.png'; plot 'result.txt' with lines";
@@ -48,7 +49,10 @@ int main(void)
   int n = 0;
 
 }
-// integrand 1
+/**
+    Returns sin of x
+
+*/
 double f(double x) {
   double y = 0;
   y = sin(x);

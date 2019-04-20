@@ -5,9 +5,9 @@
  Contact: eapfefferle@gmail.com
 */
 #include <iostream>
-#include <cmath>
+#include <cmath>            // for sin
 // user defined library
-#include "libintegrate.h"
+#include "simpson.hpp"
 // definitions
 # define PI 3.14159265358979323846
 # define LAMBDA 2

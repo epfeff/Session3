@@ -1,14 +1,13 @@
 /**
- libintegrate.h
+ simpson.hpp
 
  Author: Elena Pfefferlé
  Contact: eapfefferle@gmail.com
 */
-#include <assert.h>
+#ifndef SIMPSON_HPP
+#define SIMPSON_HPP
 
-// function declaration
-template<typename F, typename T>T simpson(F& f, T a, T b, unsigned n);
-
+#include <assert.h>             // to use assertions
 /**
  Computes the area between intervals 'a' and 'b' of a function 'f' using 'n' bins.
  - a must be different than b.
@@ -21,14 +20,18 @@ template<typename F, typename T>T simpson(F& f, T a, T b, unsigned n);
  - a is a double, it represents the lowest point of the interval.
  - b is a double, it represents the highest point of the interval.
  - n is a double, it represents the quantity of bins to analyze
+
+  Returns the computed area.
 */
+template<typename F, typename T>T simpson(F& f, T a, T b, unsigned n);
+// precondition: a != b
+// precondition: b > a
+// precondition: n < 0
+// precondition: f returns one double value
+// postcondidition: returns the area computed
+
 template<typename F, typename T> T simpson(F& f, T a, T b, unsigned n)
 {
-  // precondition: a != b
-  // precondition: b > a
-  // precondition: n < 0
-  // precondition: f returns one double value
-  // postcondidition: returns the area computed
   assert(a != b && "A must be different from B !");
   assert(a < b && "B must be greater than A !");
   assert(n > 0 && "N must be greater than 0 !");
@@ -53,3 +56,4 @@ template<typename F, typename T> T simpson(F& f, T a, T b, unsigned n)
     area = area * h/6;
     return area;
 }
+#endif

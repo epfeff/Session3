@@ -22,7 +22,7 @@ int main(void)
 
   Z2 p = Plus, m = Minus;
   Z2 r = p*m;
-
+  // some testing
   std::cout << "           r = p*m : " << r << endl;
   std::cout << "            2*Plus : " << 2*Plus << endl;
   std::cout << "           2*Minus : " << 2*Minus << endl;
@@ -37,9 +37,6 @@ int main(void)
   std::cout << "   mypow -> Plus^5 : " << mypow(Plus,5) << endl;
   std::cout << "  mypow -> Minus^4 : " << mypow(Minus,4) << endl;
   std::cout << "      mypow -> 5^5 : " << mypow(5,2) << endl;
-
-  int n = 0;
-  std::cin >> n;
 }
 // Multiplication operator overload
 Z2 operator * (Z2 a, Z2 b)

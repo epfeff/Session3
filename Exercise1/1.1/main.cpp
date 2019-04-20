@@ -16,15 +16,16 @@ int main(void)
 {
     // to store sequence size
     int n;
-    // to store user inputs
-    int p;
+    // to store user input
+    double p;
     // to compute the sum of the sequence
     double sum = 0;
     // Asks user for the quantity of values (sequence size)
+    std::cout << "! Non numerical values will crash the program !" << endl;
     std::cout << "Number of values: ";
     std::cin >>n;
     double sequence[n];
-    // Asks user to input the values stored in the sequence
+    // Asks user to input the values to store in the sequence
     for (int i = 0; i<n; i++) {
       std::cout << "Value " << i << ": ";
       std::cin >> p;
@@ -40,6 +41,7 @@ int main(void)
     }
     // output reversed nomalized sequence
     printReverse(sequence, n);
+    return(0);
 }
 
 // Output a reversed normalized sequence

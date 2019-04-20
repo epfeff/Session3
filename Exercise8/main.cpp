@@ -33,6 +33,6 @@ int main()
 	  std::cout << *(--iter);
 	} while( iter != array.begin() );
 	std::cout << std::endl;
+	int n = 0;
 
-	return 0;
 }

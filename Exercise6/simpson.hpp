@@ -1,8 +1,7 @@
 /**
  simpson.hpp
 
- Author: Elena Pfefferlé
- Contact: eapfefferle@gmail.com
+ Authors: Elena Pfefferlé, Pascal Schenk
 */
 #ifndef SIMPSON_HPP
 #define SIMPSON_HPP

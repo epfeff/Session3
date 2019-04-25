@@ -1,8 +1,7 @@
 /**
  simpson.cpp
 
- Author: Elena Pfefferlé
- Contact: eapfefferle@gmail.com
+ Authors: Elena Pfefferlé, Pascal Schenk
 */
 #include <assert.h>
 #include "simpson.hpp"

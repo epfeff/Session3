@@ -1,8 +1,7 @@
 /**
  Programming SS 2019 - Problem Set 3
  Exercise 1.2
- Author: Elena Pfefferlé
- Contact: eapfefferle@gmail.com
+ Authors: Elena Pfefferlé, Pascal Schenk
 */
 #include <iostream>
 #include <vector>         // to use vectors

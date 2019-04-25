@@ -1,6 +1,6 @@
 # Exercise 9
 ######  Programming SS 2019 - Problem Set 3
-Author: Elena Pfefferlé
+Author: *Elena Pfefferlé*, *Pascal Schenk*
 
 ### General:
 

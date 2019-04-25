@@ -1,8 +1,7 @@
 /**
  Programming SS 2019 - Problem Set 3
  Exercise 3
- Author: Elena Pfefferlé
- Contact: eapfefferle@gmail.com
+ Authors: Elena Pfefferlé, Pascal Schenk
 */
 #include <iostream>
 #include <cmath>            // to use sin
